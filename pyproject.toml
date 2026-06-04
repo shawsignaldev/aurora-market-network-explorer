@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aurora-market-network-explorer"
+version = "0.1.0"
+description = "Streamlit dashboard for market correlation network analysis."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Ephraim Shaw" }]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
