@@ -15,7 +15,20 @@ def sample_prices() -> dict[str, list[float]]:
     }
 
 
+def sample_sectors() -> dict[str, str]:
+    """Return deterministic sample sector labels."""
+    return {
+        "SPY": "Index",
+        "QQQ": "Index",
+        "NVDA": "Semiconductors",
+        "AMD": "Semiconductors",
+        "XOM": "Energy",
+        "GLD": "Commodity",
+    }
+
+
 def returns(prices: list[float]) -> list[float]:
     """Compute simple returns."""
+    if len(prices) < 2:
+        return []
     return [(prices[index] / prices[index - 1]) - 1.0 for index in range(1, len(prices))]
-

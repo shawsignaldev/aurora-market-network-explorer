@@ -30,6 +30,21 @@ def correlation(left: list[float], right: list[float]) -> float:
     return 0.0 if denominator == 0 else numerator / denominator
 
 
+def correlation_matrix(price_map: dict[str, list[float]]) -> dict[str, dict[str, float]]:
+    """Build a rounded return-correlation matrix."""
+    symbols = list(price_map)
+    matrix: dict[str, dict[str, float]] = {}
+    for source in symbols:
+        row: dict[str, float] = {}
+        for target in symbols:
+            if source == target:
+                row[target] = 1.0
+            else:
+                row[target] = round(correlation(returns(price_map[source]), returns(price_map[target])), 4)
+        matrix[source] = row
+    return matrix
+
+
 def build_edges(price_map: dict[str, list[float]], threshold: float) -> list[Edge]:
     """Build thresholded correlation edges."""
     if not 0 <= threshold <= 1:
@@ -40,4 +55,3 @@ def build_edges(price_map: dict[str, list[float]], threshold: float) -> list[Edg
         if abs(value) >= threshold:
             edges.append(Edge(source=source, target=target, correlation=round(value, 4)))
     return edges
-

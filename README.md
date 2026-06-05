@@ -7,7 +7,7 @@
 
 ## Overview
 
-Aurora is a Streamlit dashboard for exploring equity correlation networks, sector structure, threshold-based graph behavior, and market clustering. The project turns a correlation matrix into an inspectable network view where nodes represent assets and edges represent relationships above a selected threshold. It is designed for visualization and research, not trading recommendations. Public examples can run on safe sample data without credentials.
+Aurora is a Streamlit dashboard for exploring equity correlation networks, sector structure, threshold-based graph behavior, and market clustering. The project turns a deterministic sample universe into an inspectable correlation matrix, thresholded edge table, node-degree summary, and exportable dashboard report. It is designed for visualization and research, not trading recommendations. Public examples can run on safe sample data without credentials.
 
 ## Why It Matters
 
@@ -20,8 +20,9 @@ Correlation structure affects diversification, risk concentration, and market st
 - Threshold-based network graph
 - Sector clustering notes
 - Threshold slider concept
-- Node details and simple graph metrics
-- Export/reporting roadmap
+- Node details, degree counts, and graph-density metrics
+- Strongest-edge ranking
+- Exportable summary report
 
 ## Architecture
 
@@ -91,24 +92,24 @@ streamlit run app.py
 
 ## Example Analysis
 
-| Threshold | Nodes | Edges | Interpretation |
-| --- | ---: | ---: | --- |
-| `0.30` | 6 | 8 | Broad connected market structure |
-| `0.60` | 6 | 3 | Stronger sector clusters remain |
-| `0.80` | 6 | 1 | Only the tightest relationship survives |
+| Threshold | Nodes | Edges | Density | Interpretation |
+| --- | ---: | ---: | ---: | --- |
+| `0.30` | 6 | 12 | `0.8000` | Broad connected market structure |
+| `0.60` | 6 | 9 | `0.6000` | Stronger sector clusters remain |
+| `0.80` | 6 | 6 | `0.4000` | Only the tightest relationships survive |
 
 ## Screenshots
 
-Screenshots are intentionally omitted until sanitized visuals are available. See `screenshots/README.md`.
+![Aurora network preview](docs/assets/network-preview.svg)
 
 ## Project Status
 
-Active research/build project. Public repository focuses on architecture, documentation, examples, and selected safe components.
+Version 0.1 public dashboard release with deterministic sample data, correlation matrix generation, thresholded edge construction, node metrics, exportable summaries, tests, and documented roadmap items.
 
 ## Roadmap
 
 - Add live yfinance adapter with sample-data fallback
-- Add Plotly network visualization
+- Add Plotly network visualization canvas
 - Add exportable correlation reports
 - Add sector metadata and clustering labels
 - Add dashboard screenshots
