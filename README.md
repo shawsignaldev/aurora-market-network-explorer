@@ -25,6 +25,8 @@ Correlation structure affects diversification, risk concentration, and market st
 
 ## Architecture
 
+![Aurora network preview](docs/assets/network-preview.svg)
+
 ```mermaid
 graph TD
   A[Price Data] --> B[Returns]
@@ -107,4 +109,3 @@ Active research/build project. Public repository focuses on architecture, docume
 ## Disclaimer
 
 This repository is for educational and research purposes only. It is not financial advice, investment advice, or a recommendation to buy or sell any security. Trading involves risk, including possible loss of capital.
-
