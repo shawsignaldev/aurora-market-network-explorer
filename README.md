@@ -58,6 +58,13 @@ aurora-market-network-explorer/
 - Plotly or matplotlib
 - yfinance or safe sample data
 
+## Review Docs
+
+- [Network methodology](docs/network_methodology.md)
+- [Example analysis](docs/example_analysis.md)
+- [Architecture](docs/architecture.md)
+- [Recruiter brief](docs/recruiter_brief.md)
+
 ## Quickstart
 
 ```bash

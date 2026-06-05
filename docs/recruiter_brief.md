@@ -1,6 +1,6 @@
 # Recruiter Brief
 
-Aurora demonstrates a finance-focused data visualization project: sample market data, correlation computation, graph construction, Streamlit UI scaffolding, tests, and documentation.
+Aurora demonstrates a finance-focused data visualization project: sample market data, correlation computation, graph construction, Streamlit UI structure, tests, and documentation.
 
 ## Signal
 
@@ -14,4 +14,3 @@ Aurora demonstrates a finance-focused data visualization project: sample market 
 - Software engineering intern
 - Quant research tooling intern
 - Fintech analytics intern
-
